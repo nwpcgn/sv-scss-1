@@ -1,0 +1,71 @@
+:root {
+	--ind-sun-border: #ffcc00;
+	--ind-sun-bg: #ffeeaa;
+	--ind-sun-size: 128px;
+	--ind-sun-left: 770px;
+	--ind-sun-top: 40px;
+	--ind-bg-opacity: 0.6;
+	--ind-bg-bg: transparent;
+	--ind-floor-bg: transparent;
+	--ind-build-bg: transparent;
+	--ind-build-left: 100px;
+	--ind-build-top: 320px;
+	--ind-bg1: url('https://i.imgur.com/T1lt79p.png');
+	--ind-bg: url('../../cp/bg1.png');
+}
+
+#industrie1 {
+	position: relative;
+	left: 0px;
+	top: 0px;
+	width: 1024px;
+	height: 640px;
+
+	aside {
+		opacity: var(--ind-bg-opacity);
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		width: 1024px;
+		height: 640px;
+		background: var(--ind-bg-bg);
+		background-image: var(--ind-bg);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	footer {
+		position: absolute;
+		left: 0px;
+		top: 512px;
+		width: 1024px;
+		height: 128px;
+		background: var(--ind-floor-bg);
+		background-image: url('../../cp/floor_map.png');
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+	}
+
+	article {
+		position: absolute;
+		left: var(--ind-build-left);
+		top: var(--ind-build-top);
+		width: 640px;
+		height: 192px;
+		background: var(--ind-build-bg);
+		background-image: url('../../cp/build_map_1.png');
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+	header {
+		position: absolute;
+		left: var(--ind-sun-left);
+		top: var(--ind-sun-top);
+		width: var(--ind-sun-size);
+		height: var(--ind-sun-size);
+		border: 1px solid var(--ind-sun-border);
+		background: var(--ind-sun-bg);
+		border-radius: var(--ind-sun-size);
+	}
+}

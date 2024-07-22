@@ -1,0 +1,46 @@
+/* Header */
+.appbar {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9;
+	border-bottom: 4px solid #d3d3d3;
+	background-color: white;
+}
+
+.appbar > .container {
+	display: flex;
+	align-items: end;
+	--px: var(--spacing-sm);
+	--py: var(--spacing-sm);
+	width: var(--page-width);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--py) var(--px);
+	transition: all 0.2s ease;
+}
+
+.appbar > .container > .nav-brand {
+	margin-right: auto;
+}
+
+.appbar > .container > .social-button {
+	margin-left: auto;
+}
+
+.nav-brand .brand-logo {
+	margin-right: 1rem;
+}
+
+.nav-brand > a {
+	color: #212529;
+	text-decoration: none;
+}
+
+.social-buttons > * {
+	display: flex;
+	gap: var(--spacing-xs);
+	margin-bottom: 0;
+}

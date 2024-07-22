@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import 'vars';
+
+@mixin truncate() {
+	overflow: hidden;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+:root {
+	--tw-shadow-color: currentColor;
+	--tw-shadow: var(--tw-shadow-colored);
+}
+@mixin shadow() {
+	--tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1), 0 1px 2px -1px rgb(0 0 0/0.1);
+	--tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),
+		0 1px 2px -1px var(--tw-shadow-color);
+	-webkit-box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+		var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+:root {
+	--gb-100: #e0f8cf;
+	--gb-200: #86c06c;
+	--gb-300: #306850;
+	--gb-400: #071821;
+	--gb-gray-100: #f8f8f8;
+	--gb-gray-200: #a8a8a8;
+	--gb-gray-300: #585858;
+	--gb-gray-400: #080808;
+	--led-red: #6b1828;
+	--led-color: var(--led-red);
+	--font-gb: 'Press Start 2P';
+	--layout-spacing: clamp(1rem, 5%, 3rem);
+}
+
+.font-gb {
+	font-family: var(--font-gb);
+}
+
+/***
+ 🔵 SmolCSS Snippet Styles Body
+ */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	font-family: system-ui, sans-serif;
+	line-height: 1.5;
+	font-size: 1rem;
+	color: var(--gray-700);
+	background-color: #fff;
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex-grow: 1;
+	position: relative;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+@import 'patreals/layer';
+@import 'patreals/content';
+@import 'patreals/svg-icon';
+
+.main > *:not(header) {
+	--layout-spacing: max(8vh, 3rem);
+	--max-width: 680px;
+	width: min(100%, var(--max-width));
+	margin-left: auto;
+	margin-right: auto;
+}
+article {
+	padding: var(--spacing-lg);
+	background-color: rgba(241, 243, 246, 0.7);
+	border-radius: var(--spacing);
+	margin-bottom: var(--spacing);
+	&:first-child {
+		margin-top: var(--spacing);
+	}
+}
+.footer {
+	padding: var(--layout-spacing);
+}
+
+.footer p {
+	padding: 0.25em;
+	font-size: 0.9rem;
+	color: #767676;
+	margin: 0;
+	text-align: center;
+}
+
+:is(h1, h2, h3) {
+	line-height: 1.2;
+	margin-bottom: var(--spacing-sm);
+}
+
+:is(h2, h3):not(:first-child) {
+	margin-top: 1em;
+}
+
+a {
+	color: var(--sky-500);
+	text-decoration: none;
+}
+button {
+	background-color: transparent;
+	border-color: transparent;
+	padding: 0;
+	margin: 0;
+}
+.link-bar {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) 0;
+}
+
+.link {
+	display: inline-grid;
+	place-content: center;
+	background-color: var(--gray-50);
+	color: var(--gray-600);
+	padding: var(--spacing-sm) var(--spacing);
+	cursor: pointer;
+	@include shadow;
+	&:hover {
+		color: var(--sky-600);
+	}
+	&:active,
+	&.active {
+		color: var(--gray-400);
+	}
+}
+
+.smol-css-grid {
+	--min: 150px;
+	--gap: 1rem;
+
+	display: grid;
+	grid-gap: var(--gap);
+	/* min() with 100% prevents overflow
+  in extra narrow spaces */
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+/***
+ 🔵 SmolCSS Flexbox Grid
+ */
+
+.smol-flexbox-grid {
+	--min: 10ch;
+	--gap: 1rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+}
+
+.smol-flexbox-grid > * {
+	flex: 1 1 var(--min);
+}
+
+/***
+ 🔵 SmolCSS  responsive-padding
+ */
+
+.smol-responsive-padding {
+	padding: 1.5rem clamp(1rem, 5%, 3rem);
+}
+
+/***
+🔵 SmolCSS
+ */
+
+.smol-sidebar {
+	display: grid;
+	grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+	&.dev {
+		min-height: 40vh;
+	}
+	aside {
+		position: relative;
+		overflow: hidden;
+		padding: var(--spacing-sm);
+		background-color: var(--gray-100);
+	}
+	section {
+		position: relative;
+		overflow: hidden;
+		padding: var(--spacing-sm);
+		background-color: #fff;
+	}
+}
+
+/***
+ 🔵 SmolCSS  Scrol Snap
+ */
+
+.smol-scroll-snap {
+	/* Set up container positioning */
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 1.5rem;
+	/* Enable overflow along our scroll axis */
+	overflow-x: auto;
+	/* Define axis and scroll type, where
+  `mandatory` means any scroll attempt will
+  cause a scroll to the next item */
+	-ms-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	padding: 0 0 1.5rem;
+	-webkit-overflow-scrolling: touch;
+}
+
+.smol-scroll-snap > * {
+	width: min(45ch, 90vw);
+	/* Choose how to align children on scroll */
+	scroll-snap-align: center;
+	/* Prevents scrolling past more than one child */
+	scroll-snap-stop: always;
+}
+
+/***
+ 🔵 SmolCSS
+ */
+
+/***
+ 🔵 SmolCSS
+ */
+
+.text-truncate {
+	@include truncate;
+}

@@ -1,0 +1,90 @@
+.smol-css-grid {
+	--min: 150px;
+	--gap: 1rem;
+	display: grid;
+	grid-gap: var(--gap);
+
+	/* min() with 100% prevents overflow
+  in extra narrow spaces */
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+/* **
+ 🔵 SmolCSS Flexbox Grid */
+.smol-flexbox-grid {
+	--min: 10ch;
+	--gap: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap);
+
+	> * {
+		flex: 1 1 var(--min);
+	}
+}
+
+/* **
+ 🔵 SmolCSS  responsive-padding */
+.smol-responsive-padding {
+	padding: 1.5rem clamp(1rem, 5%, 3rem);
+}
+
+.smol-sidebar {
+	display: grid;
+	grid-template-columns: fit-content(20ch) minmax(min(50vw, 30ch), 1fr);
+
+	&.dev {
+		min-height: 40vh;
+	}
+
+	&.page {
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	aside {
+		position: relative;
+		overflow: hidden;
+		padding: var(--spacing-sm);
+		background-color: var(--gray-100);
+	}
+
+	section {
+		position: relative;
+		overflow: hidden;
+		padding: var(--spacing-sm);
+		background-color: #fff;
+	}
+}
+
+/* **
+ 🔵 SmolCSS  Scrol Snap */
+.smol-scroll-snap {
+	/* Set up container positioning */
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 1.5rem;
+
+	/* Enable overflow along our scroll axis */
+	overflow-x: auto;
+
+	/* Define axis and scroll type, where
+  `mandatory` means any scroll attempt will
+  cause a scroll to the next item */
+	-ms-scroll-snap-type: x mandatory;
+	scroll-snap-type: x mandatory;
+	padding: 0 0 1.5rem;
+	-webkit-overflow-scrolling: touch;
+
+	> * {
+		width: min(45ch, 90vw);
+
+		/* Choose how to align children on scroll */
+		scroll-snap-align: center;
+
+		/* Prevents scrolling past more than one child */
+		scroll-snap-stop: always;
+	}
+}

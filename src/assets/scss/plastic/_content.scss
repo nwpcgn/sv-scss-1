@@ -1,0 +1,135 @@
+.plastic {
+	.content {
+		width: var(--page-width);
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 4rem 2rem;
+		opacity: 0.1;
+		transition:
+			opacity 0.4s ease-in,
+			transform 0.4s ease;
+		transform: scale(0.5, 0.5);
+	}
+
+	.header {
+		background: linear-gradient(to right, #ff416c, #ff4b2b);
+		padding: 20px;
+		color: #ffffff;
+	}
+
+	header h1 {
+		margin: 0;
+		font-size: 3em;
+	}
+
+	nav {
+		margin-top: 10px;
+	}
+
+	nav a {
+		color: #fff;
+		text-decoration: none;
+		margin: 0 10px;
+		font-size: 1.2em;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	.hero {
+		background-image: url('../../img/qI4cni8.jpeg');
+
+		/* Hintergrundbild der Serie */
+		background-size: cover;
+		background-position: center;
+		height: 75vh;
+		display: grid;
+		color: #fff;
+		background-repeat: no-repeat;
+		place-content: center;
+	}
+
+	.content h2 {
+		font-size: 2.5em;
+		margin-bottom: 20px;
+	}
+
+	footer {
+		background-color: #222;
+		padding: 10px;
+		font-size: 0.9em;
+	}
+
+	footer p {
+		margin: 0;
+		color: #ffffff;
+	}
+
+	.highlight {
+		color: #ff416c;
+		font-weight: bold;
+	}
+
+	.cta-button {
+		display: inline-block;
+		padding: 10px 20px;
+		margin-top: 20px;
+		background-color: #ff416c;
+		color: #fff;
+		text-decoration: none;
+		border-radius: 5px;
+		transition: background-color 0.3s;
+	}
+
+	.cta-button:hover {
+		background-color: #ff4b2b;
+	}
+}
+
+.hero header {
+	background: linear-gradient(
+		to right,
+		rgba(255, 74, 43, 0.79) 7%,
+		rgba(255, 75, 43, 0.66) 100%
+	);
+	padding: var(--spacing-xl);
+	color: #ffffff;
+	border-radius: var(--spacing);
+}
+
+.md-content h4 {
+	font-size: 1.6rem;
+	font-weight: 200;
+	padding: var(--spacing-lg) var(--spacing);
+	background-color: var(--gray-50);
+	border-radius: var(--spacing-md);
+	margin: var(--spacing-md) 0;
+}
+
+.md-content p {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.md-content p > em {
+	color: var(--sky-600);
+	font-weight: 500;
+}
+
+.md-content > p {
+	margin-bottom: var(--spacing-sm);
+	font-size: 1rem;
+}
+
+.md-content h3 {
+	font-size: 1.6rem;
+	font-weight: 500;
+	padding: var(--spacing-lg) var(--spacing);
+	background-color: var(--sky-100);
+	color: var(--sky-600);
+	border-radius: var(--spacing-md);
+	margin: var(--spacing-md) 0;
+}

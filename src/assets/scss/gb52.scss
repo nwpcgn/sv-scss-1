@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import 'vars';
+
+:root {
+	--gb-100: #e0f8cf;
+	--gb-200: #86c06c;
+	--gb-300: #306850;
+	--gb-400: #071821;
+	--gb-gray-100: #f8f8f8;
+	--gb-gray-200: #a8a8a8;
+	--gb-gray-300: #585858;
+	--gb-gray-400: #080808;
+	--led-red: #6b1828;
+	--led-color: var(--led-red);
+	--font-gb: 'Press Start 2P';
+}
+
+.font-gb {
+	font-family: var(--font-gb);
+}
+
+@import 'patreals/main';
+@import 'patreals/layer';
+@import 'patreals/content';
+
+.gb5-wrapp {
+	width: 1024px;
+	height: 640px;
+	position: relative;
+	max-width: 100%;
+}
+
+@import 'gb/helper1';

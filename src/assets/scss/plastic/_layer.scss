@@ -1,0 +1,81 @@
+.layer {
+	--oy: auto;
+	--pc: center;
+	--ad: 1.5s;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: var(--oy);
+	transition: transform 0.8s ease-in;
+
+	&.fix {
+		--oy: hidden;
+	}
+
+	&.right {
+		transform: translate(100%, 0);
+	}
+
+	&.left {
+		transform: translate(-100%, 0);
+	}
+
+	&.bottom {
+		transform: translate(0, 100%);
+	}
+
+	&.top {
+		transform: translate(0, -100%);
+	}
+
+	.content {
+		opacity: 0.1;
+		transition:
+			opacity 0.4s ease-in,
+			transform 0.4s ease;
+		transform: scale(0.5, 0.5);
+	}
+
+	&.active {
+		transform: translate(0, 0);
+
+		.content {
+			opacity: 1;
+			transition-delay: 0.5s, 0.2s;
+			transform: scale(1, 1);
+		}
+	}
+
+	&.center,
+	&.foo,
+	&.middle {
+		display: grid;
+		place-content: var(--pc);
+	}
+
+	&.middle {
+		--pc: start;
+	}
+
+	&.foo {
+		--pc: end;
+	}
+
+	&.nwp {
+		animation: var(--ad) cubic-bezier(0.25, 1, 0.3, 1) layerCircleIn both;
+		animation-delay: 0.1s;
+	}
+}
+
+@keyframes layerCircleIn {
+	from {
+		clip-path: circle(0%);
+	}
+
+	to {
+		clip-path: circle(125%);
+	}
+}

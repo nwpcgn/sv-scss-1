@@ -1,0 +1,9 @@
+.content {
+	--px: var(--spacing);
+	--py: var(--spacing);
+	width: var(--page-width);
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: var(--py) var(--px);
+}
